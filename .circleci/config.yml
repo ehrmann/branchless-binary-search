@@ -1,0 +1,28 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: "debian:buster"
+    steps:
+      - checkout
+      - run:
+          name: Apt update
+          command: 'apt-get update'
+      - run:
+          name: Install dependencies
+          command: 'apt-get install -y gcc g++ cmake git'
+      - run:
+          name: "Pull Submodules"
+          command: |
+            git submodule init
+            git submodule update --remote
+      - run:
+          name: Create make file
+          command: 'mkdir cmake-build-release && cd cmake-build-release && cmake ..'
+      - run:
+          name: Building
+          command: 'cd cmake-build-release && make'
+      - run:
+          name: Testing
+          command: './cmake-build-release/test_bbsearch'
