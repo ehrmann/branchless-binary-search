@@ -7,11 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies
-          command: 'apt-get install -y gcc g++ cmake git'
-      - run:
           name: Apt update
           command: 'apt-get update'
+      - run:
+          name: Install dependencies
+          command: 'apt-get install -y gcc g++ cmake git'
       - run:
           name: "Pull Submodules"
           command: |
