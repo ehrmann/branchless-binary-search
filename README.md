@@ -1,5 +1,5 @@
 # Branchless Binary Search
-[![CircleCI](https://circleci.com/gh/SiftScience/sift-java.svg?style=svg)](https://circleci.com/gh/SiftScience/sift-java)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ehrmann/branchless-binary-search/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ehrmann/branchless-binary-search/tree/master)
 
 This is a proof-of-concept binary search implementation that entirely avoids branching,
 i.e. `if-then-else`. It accomplishes this with a mix of bit twiddling,
